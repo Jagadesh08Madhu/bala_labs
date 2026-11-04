@@ -35,15 +35,15 @@ export default function Footer() {
   return (
     <footer
       ref={ref}
-      className={`relative isolate overflow-hidden bg-gradient-to-br from-primary-dark via-primary to-primary-dark text-white ${
+      className={`relative isolate overflow-hidden bg-linear-to-br from-primary-dark via-primary to-primary-dark text-white ${
         seen ? "is-inview" : ""
       }`}
     >
       {/* backdrop */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="bl-float absolute -left-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-primary-light/45 blur-[120px]" />
+        <div className="bl-float absolute -left-40 -top-40 h-120 w-120 rounded-full bg-primary-light/45 blur-[120px]" />
         <div
-          className="bl-float absolute -bottom-52 right-0 h-[30rem] w-[30rem] rounded-full bg-black/35 blur-[130px]"
+          className="bl-float absolute -bottom-52 right-0 h-120 w-120 rounded-full bg-black/35 blur-[130px]"
           style={{ animationDelay: "-8s" }}
         />
         <div
@@ -60,7 +60,7 @@ export default function Footer() {
         />
         {/* giant wordmark */}
         <p
-          className="font-outfit absolute -bottom-[0.18em] left-1/2 -translate-x-1/2 select-none whitespace-nowrap text-[19vw] font-bold leading-none tracking-tight text-white/[0.06]"
+          className="font-outfit absolute bottom-[-0.18em] left-1/2 -translate-x-1/2 select-none whitespace-nowrap text-[19vw] font-bold leading-none tracking-tight text-white/6"
           aria-hidden="true"
         >
           BALA LABS
@@ -105,7 +105,7 @@ export default function Footer() {
               href="https://www.balalabs.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="bl-in-up font-outfit group mt-7 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-base font-medium backdrop-blur transition hover:bg-white hover:text-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="bl-in-up font-outfit group mt-7 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-base font-medium backdrop-blur transition hover:bg-white hover:text-primary-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               style={{ "--d": "0.3s" }}
             >
               www.balalabs.in
@@ -135,7 +135,7 @@ export default function Footer() {
                 >
                   <Link
                     href={l.href}
-                    className="font-outfit group flex items-center justify-between gap-10 border-b border-white/15 py-4 text-xl font-medium transition hover:border-white/50 sm:text-2xl lg:min-w-[22rem]"
+                    className="font-outfit group flex items-center justify-between gap-10 border-b border-white/15 py-4 text-xl font-medium transition hover:border-white/50 sm:text-2xl lg:min-w-88"
                   >
                     <span className="transition-transform duration-300 group-hover:translate-x-2">
                       {l.label}
@@ -170,7 +170,7 @@ export default function Footer() {
           <button
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="font-outfit group inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 text-sm font-medium transition hover:bg-white hover:text-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            className="font-outfit group inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 text-sm font-medium transition hover:bg-white hover:text-primary-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             Back to top
             <svg
