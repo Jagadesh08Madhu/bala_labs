@@ -1,17 +1,5 @@
-import { Outfit, Figtree } from "next/font/google";
+
 import "./globals.css";
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  display: "swap",
-});
-
-const figtree = Figtree({
-  subsets: ["latin"],
-  variable: "--font-figtree",
-  display: "swap",
-});
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -30,6 +18,7 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+
   applicationName: "Bala Labs",
 
   alternates: {
@@ -55,9 +44,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${outfit.variable} ${figtree.variable} antialiased`}
-      >
+      <body className="antialiased">
         {children}
       </body>
     </html>

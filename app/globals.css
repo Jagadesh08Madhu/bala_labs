@@ -1,8 +1,11 @@
+@import "@fontsource-variable/outfit";
+@import "@fontsource-variable/figtree";
 @import "tailwindcss";
 
+
 @theme inline {
-  --font-outfit: var(--font-outfit);
-  --font-figtree: var(--font-figtree);
+  --font-outfit: "Outfit Variable", sans-serif;
+  --font-figtree: "Figtree Variable", sans-serif;
   --color-primary: #b5121b;
   --color-primary-dark: #8f1018;
   --color-primary-light: #d62832;
@@ -197,11 +200,21 @@
 /* ---- Add to the BOTTOM of app/globals.css ---- */
 
 /* vertical line draw (mobile "How to Join" connector) */
-.bl-in-line-y { transform: scaleY(0); transform-origin: top; }
-@keyframes bl-line-y {
-  from { transform: scaleY(0); }
-  to   { transform: scaleY(1); }
+.bl-in-line-y {
+  transform: scaleY(0);
+  transform-origin: top;
 }
+
+@keyframes bl-line-y {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
 .is-inview .bl-in-line-y {
   animation: bl-line-y 0.9s cubic-bezier(0.6, 0, 0.2, 1) forwards;
   animation-delay: var(--d, 0s);
@@ -209,14 +222,33 @@
 
 /* light sweep across the price card */
 @keyframes bl-shine {
-  0%, 60% { transform: translateX(0) skewX(-12deg); }
-  100%    { transform: translateX(520%) skewX(-12deg); }
+
+  0%,
+  60% {
+    transform: translateX(0) skewX(-12deg);
+  }
+
+  100% {
+    transform: translateX(520%) skewX(-12deg);
+  }
 }
-.bl-shine { animation: bl-shine 5s ease-in-out 1.5s infinite; }
+
+.bl-shine {
+  animation: bl-shine 5s ease-in-out 1.5s infinite;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .bl-in-line-y, .is-inview .bl-in-line-y { animation: none !important; transform: none; }
-  .bl-shine { animation: none; display: none; }
+
+  .bl-in-line-y,
+  .is-inview .bl-in-line-y {
+    animation: none !important;
+    transform: none;
+  }
+
+  .bl-shine {
+    animation: none;
+    display: none;
+  }
 }
 
 
@@ -224,15 +256,24 @@
 
 /* success checkmark draw */
 @keyframes bl-draw {
-  to { stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
+
 .bl-draw {
   stroke-dasharray: 150;
   stroke-dashoffset: 150;
   animation: bl-draw 0.7s cubic-bezier(0.6, 0, 0.2, 1) forwards;
 }
-.bl-draw-late { animation-delay: 0.55s; }
+
+.bl-draw-late {
+  animation-delay: 0.55s;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .bl-draw { animation: none; stroke-dashoffset: 0; }
+  .bl-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
 }
